@@ -46,6 +46,7 @@ func main() {
 	fmt.Println(lengthOfNonRepeatingSubStr("abcfe"))
 	fmt.Println(lengthOfNonRepeatingSubStr("abcfea"))
 	fmt.Println(lengthOfNonRepeatingSubStr("a"))
+	fmt.Println(lengthOfNonRepeatingSubStr("中国人abc"))
 }
 /**
 	以 abcfea 为例：
@@ -69,7 +70,7 @@ func main() {
 // 寻找最长不含有重复字符的子串
 func lengthOfNonRepeatingSubStr(s string) int {
 	// map,不含重复字符的子串的起始长度,需要返回的不含重复字符的子串长度
-	lastOccurred, start, maxLength := make(map[byte]int), 0, 0
+	lastOccurred, start, maxLength := make(map[rune]int), 0, 0
 
 	/*
 		遍历每个字符:
@@ -77,7 +78,7 @@ func lengthOfNonRepeatingSubStr(s string) int {
 		lastOccurred[ch] >= start  ->  更新 start
 		更新 lastOccurred[ch] ，更新 maxLength
 	  */
-	for i, ch := range []byte(s) {
+	for i, ch := range []rune(s) {
 		// 从 map 中查字符 ch 的计数；找到，并且 >= start 下标
 		if lastI, ok := lastOccurred[ch]; ok && lastI >= start {
 			start = lastI + 1
