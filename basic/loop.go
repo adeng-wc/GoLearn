@@ -45,5 +45,5 @@ func main() {
 		conventToBin(11),
 	)
 
-	printFile("abc.text")
+	printFile("basic/abc.text")
 }
