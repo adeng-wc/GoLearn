@@ -12,7 +12,7 @@ type Node struct {
 // Node 接受者    == func  print(Node Node)
 // 值接收者
 func (node Node) Print() {
-	fmt.Println(node.Value)
+	fmt.Print(node.Value)
 }
 
 // *Node 指针接受者
