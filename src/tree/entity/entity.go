@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"tree"
+	"GoLearn/src/tree"
 )
 
 // 组合

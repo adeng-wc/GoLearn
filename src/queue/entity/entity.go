@@ -1,7 +1,7 @@
 package main
 
 import (
-	"queue"
+	"GoLearn/src/queue"
 	"fmt"
 )
 
