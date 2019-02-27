@@ -29,12 +29,4 @@ func CreateNode(value int) *Node {
 	return &Node{Value: value} // 创建局部变量地址也能给外部使用。  结果创建在堆上还是栈上，不需要知道
 }
 
-// 遍历
-func (node *Node) Traverse() {
-	if node == nil {
-		return
-	}
-	node.Left.Traverse()
-	node.Print()
-	node.Right.Traverse()
-}
+
