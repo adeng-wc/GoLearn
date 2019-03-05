@@ -17,8 +17,10 @@ func download(r Receiver) string {
 func main() {
 
 	var r Receiver = mock.Receiver{Contexts: "mock Receiver"}
+	fmt.Printf("%T %v\n", r, r)
 	var r2 Receiver = real2.Receiver{}
+	fmt.Printf("%T %v\n", r2, r2)
 
-	fmt.Println(download(r))
-	fmt.Println(download(r2))
+	//fmt.Println(download(r))
+	//fmt.Println(download(r2))
 }
