@@ -1,11 +1,21 @@
 package tree
 
-// 遍历
+import "fmt"
+
+// 中序 遍历
 func (node *Node) Traverse() {
+	node.TraverseFunc(func(node *Node) {
+		node.Print()
+	})
+	fmt.Println()
+}
+
+func (node *Node) TraverseFunc(f func(*Node)) {
 	if node == nil {
 		return
 	}
+
 	node.Left.Traverse()
-	node.Print()
+	f(node)
 	node.Right.Traverse()
 }
