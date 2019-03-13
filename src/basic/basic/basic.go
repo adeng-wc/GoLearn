@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"math/cmplx"
 	"math"
+	"math/cmplx"
 )
 
 var (
@@ -50,11 +50,15 @@ func euler() {
 }
 func triangles() {
 	var a, b = 3, 4
+	fmt.Println(calcTriangles(a, b))
+}
+
+func calcTriangles(a, b int) int {
 	var c int
 	c = int(math.Sqrt(float64(a*a + b*b)))
-
-	fmt.Println(c)
+	return c
 }
+
 func consts() {
 	const (
 		str  = "aa"
@@ -68,14 +72,14 @@ func consts() {
 func enums() {
 
 	const (
-		java   = iota
+		java = iota
 		_
 		python
 		goload
 	)
 
 	const (
-		b  = 1 << (10 * iota)
+		b = 1 << (10 * iota)
 		kb
 		mb
 		gb
