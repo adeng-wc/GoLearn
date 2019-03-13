@@ -29,7 +29,7 @@ func pow(a, b int) int {
 	return int(math.Pow(float64(a), float64(b)))
 }
 
-func sum(numbers ... int) int {
+func Sum(numbers ... int) int {
 	s := 0
 	for i := range numbers {
 		s += numbers[i]
@@ -65,7 +65,7 @@ func main() {
 		return int(math.Pow(float64(a), float64(b)))
 	}, 3, 4))
 
-	fmt.Println(sum(1, 2, 3, 4))
+	fmt.Println(Sum(1, 2, 3, 4))
 
 	a, b := 3, 4
 	// &a 的内存地址
