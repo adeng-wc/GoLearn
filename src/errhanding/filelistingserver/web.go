@@ -5,6 +5,8 @@ import (
 	"GoLearn/src/errhanding/filelistingserver/filelisting"
 	"github.com/gpmgo/gopm/modules/log"
 	"os"
+
+	_ "net/http/pprof"
 )
 
 type appHandler func(writer http.ResponseWriter, request *http.Request) error
