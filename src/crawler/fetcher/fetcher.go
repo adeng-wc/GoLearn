@@ -10,14 +10,15 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
 )
 
 // fetcher 包下会引用同一个 rateLimiter
-//var rateLimiter = time.Tick(100 * time.Millisecond)
+var rateLimiter = time.Tick(100 * time.Millisecond)
 
 func Fetch(url string) ([]byte, error) {
 	// 等待 100 毫秒
-	//<-rateLimiter
+	<-rateLimiter
 
 	request, err := http.NewRequest(http.MethodGet, url, nil)
 	request.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
